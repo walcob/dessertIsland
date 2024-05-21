@@ -19,6 +19,7 @@
 		431E78A72BFC0BD800605B20 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 431E78A52BFC0BD800605B20 /* recipes.json */; };
 		431E78AA2BFC105500605B20 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78A92BFC105500605B20 /* TestData.swift */; };
 		431E78AE2BFC60EC00605B20 /* LoadingSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78AD2BFC60EC00605B20 /* LoadingSplashScreen.swift */; };
+		431E78B02BFD1B4200605B20 /* Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78AF2BFD1B4100605B20 /* Fetch.swift */; };
 		43EACE172BFBFF750032A5B3 /* DessertIslandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EACE162BFBFF750032A5B3 /* DessertIslandApp.swift */; };
 		43EACE192BFBFF750032A5B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EACE182BFBFF750032A5B3 /* ContentView.swift */; };
 		43EACE1B2BFBFF770032A5B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EACE1A2BFBFF770032A5B3 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		431E78A52BFC0BD800605B20 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		431E78A92BFC105500605B20 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		431E78AD2BFC60EC00605B20 /* LoadingSplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSplashScreen.swift; sourceTree = "<group>"; };
+		431E78AF2BFD1B4100605B20 /* Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch.swift; sourceTree = "<group>"; };
 		43EACE132BFBFF750032A5B3 /* DessertIsland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DessertIsland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EACE162BFBFF750032A5B3 /* DessertIslandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertIslandApp.swift; sourceTree = "<group>"; };
 		43EACE182BFBFF750032A5B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				431E78942BFC038400605B20 /* GetRecipe.swift */,
 				431E78962BFC039700605B20 /* GetRecipeList.swift */,
+				431E78AF2BFD1B4100605B20 /* Fetch.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				431E78922BFC009F00605B20 /* Recipe.swift in Sources */,
 				431E789D2BFC0A9E00605B20 /* RecipeListView.swift in Sources */,
 				431E78AE2BFC60EC00605B20 /* LoadingSplashScreen.swift in Sources */,
+				431E78B02BFD1B4200605B20 /* Fetch.swift in Sources */,
 				431E789F2BFC0AB800605B20 /* RecipeListRow.swift in Sources */,
 				43EACE192BFBFF750032A5B3 /* ContentView.swift in Sources */,
 				431E78992BFC03A200605B20 /* RecipeListEntry.swift in Sources */,

@@ -10,31 +10,29 @@ import SwiftUI
 struct RecipeView: View {
     var recipeID: String
     @State private var recipe:Recipe? = nil
+    @State private var areIngredientsCollapsed = false
     
     
     var body: some View {
         Text("")
             .task {
-                do{
-                    recipe =
-                    try await GetRecipe(recipeID:recipeID)
-                } catch{
-                    fatalError("Failed to load recipe\n\n\(error)")
-                }
+                recipe = await GetRecipe(recipeID:recipeID)
             }
         if recipe != nil{
             VStack{
-                RecipeImage(imageUrl: recipe!.strMealThumb!,width:200,height:200)
-                Text(recipe!.strMeal)
+                RecipeImage(imageUrl: recipe!.thumbnailURL,width:200,height:200)
+                Text(recipe!.name)
                     .font(.largeTitle)
-                
-                HStack{
-                    VStack{
-                        Text("Ingredients")
-                            .font(.title2)
-                        Text("\(recipe!.strMeasure1!) \(recipe!.strIngredient1!)")
+                    
+                List() {
+                    Section(header:Text("Ingredients")){
+                        ForEach(recipe!.ingredients, id:\.ingredient){ ingredient in
+                            Text("\(ingredient.quantity) \(ingredient.ingredient)")
+                        }
                     }
                 }
+                Divider()
+                Text(recipe!.instructions)
             }
         }
     }

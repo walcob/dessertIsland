@@ -13,11 +13,7 @@ struct ContentView: View {
     var body: some View {
         RecipeListView(recipeList:recipeList)
             .task{
-                do {
-                    recipeList = try await GetRecipeList()
-                } catch {
-                    recipeList = []
-                }
+                recipeList = await GetRecipeList()
             }
     }
 }
