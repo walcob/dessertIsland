@@ -35,7 +35,10 @@ struct RecipeView: View {
                     }
                 }
                 Divider()
-                Text(recipe!.instructions)
+                ScrollView{
+                    Text(recipe!.instructions)
+                        .padding()
+                }
             }
         }
     }
