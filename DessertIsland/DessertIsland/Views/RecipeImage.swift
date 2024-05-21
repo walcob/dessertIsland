@@ -7,15 +7,17 @@
 
 import SwiftUI
 
-struct RecipeThumbnail: View {
+struct RecipeImage: View {
     var imageUrl:String
+    var width:CGFloat = 50
+    var height:CGFloat = 50
     var body: some View {
         AsyncImage(url: URL(string: imageUrl)){ image in
             image.resizable()
         } placeholder: {
             Color.white
         }
-            .frame(width: 50, height: 50)
+            .frame(width: width, height: height)
             .clipShape(Circle())
             .overlay {
                 Circle().stroke(.white, lineWidth: 4)
@@ -25,5 +27,5 @@ struct RecipeThumbnail: View {
 }
 
 #Preview {
-    RecipeThumbnail(imageUrl: "https://www.themealdb.com/images/media/meals/yrstur1511816601.jpg")
+    RecipeImage(imageUrl: "https://www.themealdb.com/images/media/meals/yrstur1511816601.jpg")
 }

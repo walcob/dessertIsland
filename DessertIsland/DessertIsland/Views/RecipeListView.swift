@@ -14,7 +14,7 @@ struct RecipeListView: View {
         NavigationSplitView{
             List(recipeList, id: \.idMeal) { recipeEntry in
                 NavigationLink{
-                    RecipeView()
+                    RecipeView(recipeID: recipeEntry.idMeal)
                 } label: {
                     RecipeListRow(recipeListEntry: recipeEntry)
                 }

@@ -12,7 +12,7 @@ struct RecipeListRow: View {
     
     var body: some View {
         HStack{
-            RecipeThumbnail(imageUrl:recipeListEntry.strMealThumb)
+            RecipeImage(imageUrl:recipeListEntry.strMealThumb)
             Text(recipeListEntry.strMeal)
             Spacer()
         }

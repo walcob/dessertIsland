@@ -11,6 +11,7 @@ import Foundation
 @Observable
 class TestData{
     var recipeList: RecipeList = load("recipes.json")
+    var sugarPie: Recipe = load("sugarPie.json")
 }
 
 let sugarPieID = "52931"
