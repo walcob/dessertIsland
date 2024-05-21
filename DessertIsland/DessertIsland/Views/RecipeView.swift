@@ -21,8 +21,11 @@ struct RecipeView: View {
         if recipe != nil{
             VStack{
                 RecipeImage(imageUrl: recipe!.thumbnailURL,width:200,height:200)
-                Text(recipe!.name)
+                Link(recipe!.name,destination:URL(string:recipe!.source)!)
                     .font(.largeTitle)
+                
+                Text(recipe!.area)
+                .font(.caption)
                     
                 List() {
                     Section(header:Text("Ingredients")){
