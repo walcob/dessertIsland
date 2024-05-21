@@ -11,8 +11,17 @@ struct RecipeListView: View {
     var recipeList: [RecipeListEntry]
     
     var body: some View {
-        List(recipeList, id: \.idMeal) { recipeEntry in
-            RecipeListRow(recipeListEntry: recipeEntry)
+        NavigationSplitView{
+            List(recipeList, id: \.idMeal) { recipeEntry in
+                NavigationLink{
+                    RecipeView()
+                } label: {
+                    RecipeListRow(recipeListEntry: recipeEntry)
+                }
+            }
+            .navigationTitle("Dessert Recipes")
+        } detail: {
+            Text("Select a recipe")
         }
     }
 }
