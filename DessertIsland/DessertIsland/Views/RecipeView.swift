@@ -18,25 +18,31 @@ struct RecipeView: View {
             .task {
                 recipe = await GetRecipe(recipeID:recipeID)
             }
-        if recipe != nil{
+        if let recipe{
             VStack{
-                RecipeImage(imageUrl: recipe!.thumbnailURL,width:200,height:200)
-                Link(recipe!.name,destination:URL(string:recipe!.source)!)
+                RecipeImage(imageUrl: recipe.thumbnailURL,width:200,height:200)
+                    Text(recipe.name)
                     .font(.largeTitle)
-                
-                Text(recipe!.area)
+                HStack{
+                    Text(recipe.area)
+                    
+                    if let sourceUrl = URL(string:recipe.source){
+                        Link(sourceUrl.host!,destination:sourceUrl)
+                    }
+                }
                 .font(.caption)
                     
                 List() {
                     Section(header:Text("Ingredients")){
-                        ForEach(recipe!.ingredients, id:\.ingredient){ ingredient in
+                        ForEach(recipe.ingredients, id:\.ingredient){ ingredient in
                             Text("\(ingredient.quantity) \(ingredient.ingredient)")
                         }
                     }
                 }
+                
                 Divider()
                 ScrollView{
-                    Text(recipe!.instructions)
+                    Text(recipe.instructions)
                         .padding()
                 }
             }
