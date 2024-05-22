@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var recipeList:[RecipeListEntry] = []
+    @Environment(RecipeListData.self) var recipeList
     
     var body: some View {
-        RecipeListView(recipeList:recipeList)
+        RecipeListView()
             .task{
-                recipeList = await GetRecipeList()
+                recipeList.recipes = await GetRecipeList()
             }
     }
 }
 
 #Preview {
-    ContentView()
+    let recipeListData = RecipeListData()
+    recipeListData.recipes = TestData().recipeList.meals
+    return ContentView()
+        .environment(recipeListData)
 }

@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct RecipeListView: View {
-    var recipeList: [RecipeListEntry]
+    @Environment(RecipeListData.self) var recipeList
+    @State private var search = ""
+    
+    var filteredRecipes: [RecipeListEntry] {
+        recipeList.recipes.filter { recipe in
+            (search.isEmpty || recipe.strMeal.contains(search))
+        }
+    }
     
     var body: some View {
         NavigationSplitView{
-            List(recipeList, id: \.idMeal) { recipeEntry in
+            List(filteredRecipes, id: \.idMeal) { recipeEntry in
                 NavigationLink{
                     RecipeView(recipeID: recipeEntry.idMeal)
                 } label: {
@@ -23,10 +30,13 @@ struct RecipeListView: View {
         } detail: {
             Text("Select a recipe")
         }
+        .searchable(text:$search, prompt:"Recipe name")
     }
 }
 
 #Preview {
-    let recipeList = TestData().recipeList
-    return RecipeListView(recipeList: recipeList.meals)
+    let recipeListData = RecipeListData()
+    recipeListData.recipes = TestData().recipeList.meals
+    return RecipeListView()
+        .environment(recipeListData)
 }
