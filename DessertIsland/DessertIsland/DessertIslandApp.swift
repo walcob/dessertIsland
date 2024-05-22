@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct DessertIslandApp: App {
+    @State private var recipeListData:RecipeListData = RecipeListData()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .task {
+                    recipeListData.recipes = await GetRecipeList()
+                }
+                .environment(recipeListData)
         }
     }
 }
