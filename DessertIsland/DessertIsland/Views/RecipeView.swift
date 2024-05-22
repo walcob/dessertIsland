@@ -14,10 +14,6 @@ struct RecipeView: View {
     
     
     var body: some View {
-        Text("")
-            .task {
-                recipe = await GetRecipe(recipeID:recipeID)
-            }
         if let recipe{
             VStack{
                 RecipeImage(imageUrl: recipe.thumbnailURL,width:200,height:200)
@@ -46,6 +42,12 @@ struct RecipeView: View {
                         .padding()
                 }
             }
+        } else {
+            ProgressView()
+                .controlSize(.large)
+                .task {
+                    recipe = await GetRecipe(recipeID:recipeID)
+                }
         }
     }
 }

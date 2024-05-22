@@ -15,7 +15,7 @@ struct RecipeImage: View {
         AsyncImage(url: URL(string: imageUrl)){ image in
             image.resizable()
         } placeholder: {
-            Color.white
+            ProgressView()
         }
             .frame(width: width, height: height)
             .clipShape(Circle())
