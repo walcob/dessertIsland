@@ -15,7 +15,7 @@ struct RecipeView: View {
     
     var body: some View {
         if let recipe{
-            VStack{
+            ScrollView{
                 RecipeImage(imageUrl: recipe.thumbnailURL,width:200,height:200)
                     Text(recipe.name)
                     .font(.largeTitle)
@@ -27,20 +27,23 @@ struct RecipeView: View {
                     }
                 }
                 .font(.caption)
+                
+                Text("Ingredients")
+                    .font(.title2)
                     
-                List() {
-                    Section(header:Text("Ingredients")){
                         ForEach(recipe.ingredients, id:\.ingredient){ ingredient in
                             Text("\(ingredient.quantity) \(ingredient.ingredient)")
                         }
-                    }
-                }
+                .font(.body)
+                .frame(maxWidth:.infinity, alignment:.leading)
+                .padding([.horizontal])
                 
                 Divider()
-                ScrollView{
-                    Text(recipe.instructions)
-                        .padding()
-                }
+                Text("Directions")
+                    .font(.title2)
+                Text(recipe.instructions)
+                    .font(.body)
+                    .padding([.horizontal])
             }
         } else {
             ProgressView()
