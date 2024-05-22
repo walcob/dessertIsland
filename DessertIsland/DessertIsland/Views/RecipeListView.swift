@@ -13,7 +13,7 @@ struct RecipeListView: View {
     
     var filteredRecipes: [RecipeListEntry] {
         recipeList.recipes.filter { recipe in
-            (search.isEmpty || recipe.strMeal.contains(search))
+            (search.isEmpty || recipe.strMeal.lowercased().contains(search.lowercased()))
         }
     }
     
