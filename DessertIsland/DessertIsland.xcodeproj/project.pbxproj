@@ -107,6 +107,7 @@
 		431E78902BFC008900605B20 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				43EACE182BFBFF750032A5B3 /* ContentView.swift */,
 				431E789C2BFC0A9E00605B20 /* RecipeListView.swift */,
 				431E789E2BFC0AB800605B20 /* RecipeListRow.swift */,
 				431E78A02BFC0AC300605B20 /* RecipeView.swift */,
@@ -163,7 +164,6 @@
 				431E78902BFC008900605B20 /* Views */,
 				431E788F2BFC008200605B20 /* Models */,
 				43EACE162BFBFF750032A5B3 /* DessertIslandApp.swift */,
-				43EACE182BFBFF750032A5B3 /* ContentView.swift */,
 				43EACE1A2BFBFF770032A5B3 /* Assets.xcassets */,
 				43EACE1C2BFBFF770032A5B3 /* Preview Content */,
 			);
