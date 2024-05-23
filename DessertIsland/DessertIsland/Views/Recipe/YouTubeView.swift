@@ -10,23 +10,23 @@ import YouTubePlayerKit
 
 struct YouTubeView: View {
     var youTubeURL: String
-    
+
     var body: some View {
         let youTubePlayer = YouTubePlayer(stringLiteral: youTubeURL)
-        
+
         return YouTubePlayerView(youTubePlayer) { state in
-                // Overlay ViewBuilder closure to place an overlay View
-                // for the current `YouTubePlayer.State`
+            // Overlay ViewBuilder closure to place an overlay View
+            // for the current `YouTubePlayer.State`
             switch state {
-                case .idle:
-                    ProgressView()
-                case .ready:
-                    EmptyView()
-                case .error(_):
-                    EmptyView()
+            case .idle:
+                ProgressView()
+            case .ready:
+                EmptyView()
+            case .error:
+                EmptyView()
             }
         }
-        .frame(height:300)
+        .frame(height: 300)
     }
 }
 

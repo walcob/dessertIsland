@@ -15,10 +15,9 @@ struct RecipeView: View {
         if let recipe {
             ScrollView {
                 RecipeHeaderView(imageURL: recipe.thumbnailURL, name: recipe.name, area: recipe.area, source: recipe.source)
-                
-                if (!recipe.youtubeUrl.isEmpty)
-                {
-                    YouTubeView(youTubeURL:recipe.youtubeUrl)
+
+                if !recipe.youtubeUrl.isEmpty {
+                    YouTubeView(youTubeURL: recipe.youtubeUrl)
                 }
 
                 Divider()
