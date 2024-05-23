@@ -8,8 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Recipe: Identifiable,Codable
-{
+struct Recipe: Identifiable, Codable {
     var id: String
     var name: String
     var category: String
@@ -19,10 +18,9 @@ struct Recipe: Identifiable,Codable
     var youtubeUrl: String
     var ingredients: [Ingredient]
     var source: String
-    
 }
 
-struct Ingredient: Codable{
+struct Ingredient: Codable {
     var quantity: String
     var ingredient: String
 }

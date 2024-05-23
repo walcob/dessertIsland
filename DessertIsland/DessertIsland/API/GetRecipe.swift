@@ -9,17 +9,17 @@ import Foundation
 
 private var lookupBaseUrl = "https://themealdb.com/api/json/v1/1/lookup.php?i="
 
-func GetRecipe(recipeID:String) async -> Recipe {
+func GetRecipe(recipeID: String) async -> Recipe {
     let apiCommandURL = "\(lookupBaseUrl)\(recipeID)"
-    do{
-        let recipes:RawRecipes = try await Fetch(urlString: apiCommandURL)
-        return ConvertToRecipe(rawRecipe:recipes.meals[0])
-    } catch{
+    do {
+        let recipes: RawRecipes = try await Fetch(urlString: apiCommandURL)
+        return ConvertToRecipe(rawRecipe: recipes.meals[0])
+    } catch {
         fatalError("Failed to load recipe ID \(recipeID)\n\(error)")
     }
 }
 
-func ConvertToRecipe(rawRecipe:RawRecipe) -> Recipe{
+func ConvertToRecipe(rawRecipe: RawRecipe) -> Recipe {
     // Convert a raw recipe into our internal recipe type
     return Recipe(
         id: rawRecipe.idMeal,
@@ -29,50 +29,49 @@ func ConvertToRecipe(rawRecipe:RawRecipe) -> Recipe{
         instructions: rawRecipe.strInstructions,
         thumbnailURL: rawRecipe.strMealThumb,
         youtubeUrl: rawRecipe.strYoutube,
-        ingredients: ExtractIngredients(rawRecipe:rawRecipe),
-        source: rawRecipe.strSource ?? "")
+        ingredients: ExtractIngredients(rawRecipe: rawRecipe),
+        source: rawRecipe.strSource ?? ""
+    )
 }
 
-private func ExtractIngredients(rawRecipe:RawRecipe) -> [Ingredient]
-{
-        // Convert the ingredients and their respective measurements into a more
-        // useful array of Ingredient structures.
-        // Note: It is important that the array lists the ingredients in the
-        // same order as in the raw recipe, as recipes traditionally order
-        // the ingredient list in the order they are used
+private func ExtractIngredients(rawRecipe: RawRecipe) -> [Ingredient] {
+    // Convert the ingredients and their respective measurements into a more
+    // useful array of Ingredient structures.
+    // Note: It is important that the array lists the ingredients in the
+    // same order as in the raw recipe, as recipes traditionally order
+    // the ingredient list in the order they are used
     var ingredients: [Ingredient] = []
-        // This is ugly, but Swift doesn't appear to have a way for us to
-        // iterate over strIngredient1, strIngredient2, etc
-        // So, we're stuck adding each ingredient individually :'(
-    AddIngredient(quantity:rawRecipe.strMeasure1,ingredient:rawRecipe.strIngredient1,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure2,ingredient:rawRecipe.strIngredient2,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure3,ingredient:rawRecipe.strIngredient3,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure4,ingredient:rawRecipe.strIngredient4,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure5,ingredient:rawRecipe.strIngredient5,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure6,ingredient:rawRecipe.strIngredient6,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure7,ingredient:rawRecipe.strIngredient7,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure8,ingredient:rawRecipe.strIngredient8,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure9,ingredient:rawRecipe.strIngredient9,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure10,ingredient:rawRecipe.strIngredient10,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure11,ingredient:rawRecipe.strIngredient11,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure12,ingredient:rawRecipe.strIngredient12,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure13,ingredient:rawRecipe.strIngredient13,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure14,ingredient:rawRecipe.strIngredient14,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure15,ingredient:rawRecipe.strIngredient15,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure16,ingredient:rawRecipe.strIngredient16,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure17,ingredient:rawRecipe.strIngredient17,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure18,ingredient:rawRecipe.strIngredient18,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure19,ingredient:rawRecipe.strIngredient19,ingredients:&ingredients)
-    AddIngredient(quantity:rawRecipe.strMeasure20,ingredient:rawRecipe.strIngredient20,ingredients:&ingredients)
-    
+    // This is ugly, but Swift doesn't appear to have a way for us to
+    // iterate over strIngredient1, strIngredient2, etc
+    // So, we're stuck adding each ingredient individually :'(
+    AddIngredient(quantity: rawRecipe.strMeasure1, ingredient: rawRecipe.strIngredient1, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure2, ingredient: rawRecipe.strIngredient2, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure3, ingredient: rawRecipe.strIngredient3, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure4, ingredient: rawRecipe.strIngredient4, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure5, ingredient: rawRecipe.strIngredient5, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure6, ingredient: rawRecipe.strIngredient6, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure7, ingredient: rawRecipe.strIngredient7, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure8, ingredient: rawRecipe.strIngredient8, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure9, ingredient: rawRecipe.strIngredient9, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure10, ingredient: rawRecipe.strIngredient10, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure11, ingredient: rawRecipe.strIngredient11, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure12, ingredient: rawRecipe.strIngredient12, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure13, ingredient: rawRecipe.strIngredient13, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure14, ingredient: rawRecipe.strIngredient14, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure15, ingredient: rawRecipe.strIngredient15, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure16, ingredient: rawRecipe.strIngredient16, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure17, ingredient: rawRecipe.strIngredient17, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure18, ingredient: rawRecipe.strIngredient18, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure19, ingredient: rawRecipe.strIngredient19, ingredients: &ingredients)
+    AddIngredient(quantity: rawRecipe.strMeasure20, ingredient: rawRecipe.strIngredient20, ingredients: &ingredients)
+
     return ingredients
 }
 
-private func AddIngredient(quantity:String?,ingredient:String?, ingredients:inout [Ingredient]) -> Void
-{
-    if let quantity, let ingredient{
-        if !quantity.isEmpty && !ingredient.isEmpty{
-            ingredients.append(Ingredient(quantity:quantity,ingredient:ingredient))
+private func AddIngredient(quantity: String?, ingredient: String?, ingredients: inout [Ingredient]) {
+    if let quantity, let ingredient {
+        if !quantity.isEmpty, !ingredient.isEmpty {
+            ingredients.append(Ingredient(quantity: quantity, ingredient: ingredient))
         }
     }
 }
@@ -82,10 +81,11 @@ private func AddIngredient(quantity:String?,ingredient:String?, ingredients:inou
 // to an instance of our internal Recipe model. Let's keep them here so your
 // regular everyday normal dev does not need to care about them!
 
-struct RawRecipes: Codable{
+struct RawRecipes: Codable {
     var meals: [RawRecipe]
 }
-struct RawRecipe: Codable{
+
+struct RawRecipe: Codable {
     var idMeal: String
     var strMeal: String
     var strDrinkAlternate: String?

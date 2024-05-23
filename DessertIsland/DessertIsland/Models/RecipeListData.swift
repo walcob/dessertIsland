@@ -8,6 +8,6 @@
 import Foundation
 
 @Observable
-class RecipeListData{
-    var recipes:[RecipeListEntry] = []
+class RecipeListData {
+    var recipes: [RecipeListEntry] = []
 }

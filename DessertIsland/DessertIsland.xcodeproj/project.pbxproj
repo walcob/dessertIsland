@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		430395E92BFE645400FC0E62 /* RecipeListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430395E82BFE645400FC0E62 /* RecipeListData.swift */; };
+		43095FE42BFF84FB00C1FE3F /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 43095FE32BFF84FB00C1FE3F /* YouTubePlayerKit */; };
+		43095FE92BFF857B00C1FE3F /* RecipeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43095FE82BFF857B00C1FE3F /* RecipeHeaderView.swift */; };
+		43095FEB2BFF880600C1FE3F /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43095FEA2BFF880600C1FE3F /* IngredientsView.swift */; };
+		43095FED2BFF881800C1FE3F /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43095FEC2BFF881800C1FE3F /* InstructionsView.swift */; };
+		43095FEF2BFF882500C1FE3F /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43095FEE2BFF882400C1FE3F /* YouTubeView.swift */; };
 		431E78922BFC009F00605B20 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78912BFC009F00605B20 /* Recipe.swift */; };
 		431E78952BFC038400605B20 /* GetRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78942BFC038400605B20 /* GetRecipe.swift */; };
 		431E78972BFC039700605B20 /* GetRecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78962BFC039700605B20 /* GetRecipeList.swift */; };
 		431E78992BFC03A200605B20 /* RecipeListEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78982BFC03A200605B20 /* RecipeListEntry.swift */; };
 		431E789D2BFC0A9E00605B20 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E789C2BFC0A9E00605B20 /* RecipeListView.swift */; };
-		431E789F2BFC0AB800605B20 /* RecipeListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E789E2BFC0AB800605B20 /* RecipeListRow.swift */; };
+		431E789F2BFC0AB800605B20 /* RecipeListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E789E2BFC0AB800605B20 /* RecipeListRowView.swift */; };
 		431E78A12BFC0AC300605B20 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78A02BFC0AC300605B20 /* RecipeView.swift */; };
-		431E78A32BFC0B3700605B20 /* RecipeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78A22BFC0B3700605B20 /* RecipeImage.swift */; };
+		431E78A32BFC0B3700605B20 /* RecipeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78A22BFC0B3700605B20 /* RecipeImageView.swift */; };
 		431E78A62BFC0BD800605B20 /* sugarPie.json in Resources */ = {isa = PBXBuildFile; fileRef = 431E78A42BFC0BD800605B20 /* sugarPie.json */; };
 		431E78A72BFC0BD800605B20 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 431E78A52BFC0BD800605B20 /* recipes.json */; };
 		431E78AA2BFC105500605B20 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78A92BFC105500605B20 /* TestData.swift */; };
@@ -48,14 +53,18 @@
 
 /* Begin PBXFileReference section */
 		430395E82BFE645400FC0E62 /* RecipeListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListData.swift; sourceTree = "<group>"; };
+		43095FE82BFF857B00C1FE3F /* RecipeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeHeaderView.swift; sourceTree = "<group>"; };
+		43095FEA2BFF880600C1FE3F /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
+		43095FEC2BFF881800C1FE3F /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		43095FEE2BFF882400C1FE3F /* YouTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeView.swift; sourceTree = "<group>"; };
 		431E78912BFC009F00605B20 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		431E78942BFC038400605B20 /* GetRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipe.swift; sourceTree = "<group>"; };
 		431E78962BFC039700605B20 /* GetRecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeList.swift; sourceTree = "<group>"; };
 		431E78982BFC03A200605B20 /* RecipeListEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListEntry.swift; sourceTree = "<group>"; };
 		431E789C2BFC0A9E00605B20 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
-		431E789E2BFC0AB800605B20 /* RecipeListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRow.swift; sourceTree = "<group>"; };
+		431E789E2BFC0AB800605B20 /* RecipeListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRowView.swift; sourceTree = "<group>"; };
 		431E78A02BFC0AC300605B20 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
-		431E78A22BFC0B3700605B20 /* RecipeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeImage.swift; sourceTree = "<group>"; };
+		431E78A22BFC0B3700605B20 /* RecipeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeImageView.swift; sourceTree = "<group>"; };
 		431E78A42BFC0BD800605B20 /* sugarPie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sugarPie.json; sourceTree = "<group>"; };
 		431E78A52BFC0BD800605B20 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		431E78A92BFC105500605B20 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
@@ -77,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43095FE42BFF84FB00C1FE3F /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +107,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43095FE52BFF853200C1FE3F /* RecipeList */ = {
+			isa = PBXGroup;
+			children = (
+				431E789C2BFC0A9E00605B20 /* RecipeListView.swift */,
+				431E789E2BFC0AB800605B20 /* RecipeListRowView.swift */,
+			);
+			path = RecipeList;
+			sourceTree = "<group>";
+		};
+		43095FE62BFF855400C1FE3F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				431E78A22BFC0B3700605B20 /* RecipeImageView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		43095FE72BFF856500C1FE3F /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				431E78A02BFC0AC300605B20 /* RecipeView.swift */,
+				43095FE82BFF857B00C1FE3F /* RecipeHeaderView.swift */,
+				43095FEA2BFF880600C1FE3F /* IngredientsView.swift */,
+				43095FEC2BFF881800C1FE3F /* InstructionsView.swift */,
+				43095FEE2BFF882400C1FE3F /* YouTubeView.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
 		431E788F2BFC008200605B20 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,10 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				43EACE182BFBFF750032A5B3 /* ContentView.swift */,
-				431E789C2BFC0A9E00605B20 /* RecipeListView.swift */,
-				431E789E2BFC0AB800605B20 /* RecipeListRow.swift */,
-				431E78A02BFC0AC300605B20 /* RecipeView.swift */,
-				431E78A22BFC0B3700605B20 /* RecipeImage.swift */,
+				43095FE52BFF853200C1FE3F /* RecipeList */,
+				43095FE72BFF856500C1FE3F /* Recipe */,
+				43095FE62BFF855400C1FE3F /* Shared */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +252,9 @@
 			dependencies = (
 			);
 			name = DessertIsland;
+			packageProductDependencies = (
+				43095FE32BFF84FB00C1FE3F /* YouTubePlayerKit */,
+			);
 			productName = DessertIsland;
 			productReference = 43EACE132BFBFF750032A5B3 /* DessertIsland.app */;
 			productType = "com.apple.product-type.application";
@@ -286,6 +327,9 @@
 				Base,
 			);
 			mainGroup = 43EACE0A2BFBFF750032A5B3;
+			packageReferences = (
+				43095FE22BFF84FB00C1FE3F /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+			);
 			productRefGroup = 43EACE142BFBFF750032A5B3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -330,16 +374,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				431E78A32BFC0B3700605B20 /* RecipeImage.swift in Sources */,
+				431E78A32BFC0B3700605B20 /* RecipeImageView.swift in Sources */,
+				43095FED2BFF881800C1FE3F /* InstructionsView.swift in Sources */,
+				43095FEB2BFF880600C1FE3F /* IngredientsView.swift in Sources */,
 				431E78AA2BFC105500605B20 /* TestData.swift in Sources */,
 				431E78A12BFC0AC300605B20 /* RecipeView.swift in Sources */,
 				431E78922BFC009F00605B20 /* Recipe.swift in Sources */,
 				430395E92BFE645400FC0E62 /* RecipeListData.swift in Sources */,
 				431E789D2BFC0A9E00605B20 /* RecipeListView.swift in Sources */,
 				431E78B02BFD1B4200605B20 /* Fetch.swift in Sources */,
-				431E789F2BFC0AB800605B20 /* RecipeListRow.swift in Sources */,
+				431E789F2BFC0AB800605B20 /* RecipeListRowView.swift in Sources */,
 				43EACE192BFBFF750032A5B3 /* ContentView.swift in Sources */,
+				43095FEF2BFF882500C1FE3F /* YouTubeView.swift in Sources */,
 				431E78992BFC03A200605B20 /* RecipeListEntry.swift in Sources */,
+				43095FE92BFF857B00C1FE3F /* RecipeHeaderView.swift in Sources */,
 				431E78952BFC038400605B20 /* GetRecipe.swift in Sources */,
 				431E78972BFC039700605B20 /* GetRecipeList.swift in Sources */,
 				43EACE172BFBFF750032A5B3 /* DessertIslandApp.swift in Sources */,
@@ -666,6 +714,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43095FE22BFF84FB00C1FE3F /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43095FE32BFF84FB00C1FE3F /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43095FE22BFF84FB00C1FE3F /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43EACE0B2BFBFF750032A5B3 /* Project object */;
 }

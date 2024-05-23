@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct DessertIslandApp: App {
-    @State private var recipeListData:RecipeListData = RecipeListData()
-    
+    @State private var recipeListData: RecipeListData = .init()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
