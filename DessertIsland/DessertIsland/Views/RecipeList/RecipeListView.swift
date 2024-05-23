@@ -10,17 +10,17 @@ import SwiftUI
 struct RecipeListView: View {
     @Environment(RecipeListData.self) var recipeList
     @State private var search = ""
-    
+
     var filteredRecipes: [RecipeListEntry] {
         recipeList.recipes.filter { recipe in
-            (search.isEmpty || recipe.strMeal.lowercased().contains(search.lowercased()))
+            search.isEmpty || recipe.strMeal.lowercased().contains(search.lowercased())
         }
     }
-    
+
     var body: some View {
-        NavigationSplitView{
+        NavigationSplitView {
             List(filteredRecipes, id: \.idMeal) { recipeEntry in
-                NavigationLink{
+                NavigationLink {
                     RecipeView(recipeID: recipeEntry.idMeal)
                 } label: {
                     RecipeListRowView(recipeListEntry: recipeEntry)
@@ -30,7 +30,7 @@ struct RecipeListView: View {
         } detail: {
             Text("Select a recipe")
         }
-        .searchable(text:$search, prompt:"Recipe name")
+        .searchable(text: $search, prompt: "Recipe name")
     }
 }
 

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(RecipeListData.self) var recipeList
-    
+
     var body: some View {
         RecipeListView()
-            .task{
+            .task {
                 recipeList.recipes = await GetRecipeList()
             }
     }

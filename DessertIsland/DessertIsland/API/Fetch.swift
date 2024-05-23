@@ -7,8 +7,8 @@
 
 import Foundation
 
-func Fetch<T: Decodable>(urlString:String) async throws -> T {
-    let fetchUrl = URL(string:urlString)
+func Fetch<T: Decodable>(urlString: String) async throws -> T {
+    let fetchUrl = URL(string: urlString)
     let (data, _) = try await URLSession.shared.data(from: fetchUrl!)
     let output: T = try JSONDecoder().decode(T.self, from: data)
     return output

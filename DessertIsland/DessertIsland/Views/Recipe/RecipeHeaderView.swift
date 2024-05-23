@@ -1,5 +1,5 @@
 //
-//  RecipeHeader.swift
+//  RecipeHeaderView.swift
 //  DessertIsland
 //
 //  Created by Benjamin Walcott on 5/23/24.
@@ -13,14 +13,14 @@ struct RecipeHeaderView: View {
     var area: String
     var source: String?
     var body: some View {
-        RecipeImageView(imageURL: imageURL,width:200,height:200)
+        RecipeImageView(imageURL: imageURL, width: 200, height: 200)
         Text(name)
             .font(.largeTitle)
-        HStack{
+        HStack {
             Text(area)
-            
-            if let source, let sourceURL = URL(string:source){
-                Link(sourceURL.host!,destination:sourceURL)
+
+            if let source, let sourceURL = URL(string: source) {
+                Link(sourceURL.host!, destination: sourceURL)
             }
         }
         .font(.caption)
@@ -28,6 +28,6 @@ struct RecipeHeaderView: View {
 }
 
 #Preview {
-    let sugarPie:Recipe = TestData().sugarPie()
-    return RecipeHeaderView(imageURL: sugarPie.thumbnailURL, name: sugarPie.name, area: sugarPie.area, source:sugarPie.source)
+    let sugarPie: Recipe = TestData().sugarPie()
+    return RecipeHeaderView(imageURL: sugarPie.thumbnailURL, name: sugarPie.name, area: sugarPie.area, source: sugarPie.source)
 }

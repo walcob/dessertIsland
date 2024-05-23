@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InstructionsView: View {
-    var instructions:String
+    var instructions: String
     var body: some View {
         Text("Instructions")
             .font(.title2)
@@ -20,5 +20,5 @@ struct InstructionsView: View {
 
 #Preview {
     let sugarPie = TestData().sugarPie()
-    return InstructionsView(instructions:sugarPie.instructions)
+    return InstructionsView(instructions: sugarPie.instructions)
 }

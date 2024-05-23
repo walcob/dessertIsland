@@ -12,17 +12,17 @@ struct IngredientsView: View {
     var body: some View {
         Text("Ingredients")
             .font(.title2)
-        
-        ForEach(ingredients, id:\.ingredient){ ingredient in
+
+        ForEach(ingredients, id: \.ingredient) { ingredient in
             Text("\(ingredient.quantity) \(ingredient.ingredient)")
         }
         .font(.body)
-        .frame(maxWidth:.infinity, alignment:.leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding([.horizontal])
     }
 }
 
 #Preview {
     let sugarPie = TestData().sugarPie()
-    return IngredientsView(ingredients:sugarPie.ingredients)
+    return IngredientsView(ingredients: sugarPie.ingredients)
 }

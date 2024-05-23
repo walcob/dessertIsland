@@ -7,15 +7,12 @@
 
 import Foundation
 
-struct RecipeList: Codable
-{
+struct RecipeList: Codable {
     var meals: [RecipeListEntry]
 }
 
-struct RecipeListEntry: Codable
-{
+struct RecipeListEntry: Codable {
     var idMeal: String
-    var strMeal:String
+    var strMeal: String
     var strMealThumb: String
 }
-

@@ -11,12 +11,11 @@ private var dessertsUrl = "https://themealdb.com/api/json/v1/1/filter.php?c=Dess
 
 func GetRecipeList() async -> [RecipeListEntry] {
     do {
-        let recipeList: RecipeList = try await Fetch(urlString:dessertsUrl)
-        return recipeList.meals.sorted{
-            return $0.strMeal < $1.strMeal
+        let recipeList: RecipeList = try await Fetch(urlString: dessertsUrl)
+        return recipeList.meals.sorted {
+            $0.strMeal < $1.strMeal
         }
-    } catch
-        {
+    } catch {
         fatalError("Failed to load available recipes:\n\(error)")
     }
 }
