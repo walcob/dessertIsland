@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		430395E92BFE645400FC0E62 /* RecipeListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430395E82BFE645400FC0E62 /* RecipeListData.swift */; };
+		43095FE42BFF84FB00C1FE3F /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 43095FE32BFF84FB00C1FE3F /* YouTubePlayerKit */; };
 		431E78922BFC009F00605B20 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78912BFC009F00605B20 /* Recipe.swift */; };
 		431E78952BFC038400605B20 /* GetRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78942BFC038400605B20 /* GetRecipe.swift */; };
 		431E78972BFC039700605B20 /* GetRecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E78962BFC039700605B20 /* GetRecipeList.swift */; };
@@ -77,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43095FE42BFF84FB00C1FE3F /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +216,9 @@
 			dependencies = (
 			);
 			name = DessertIsland;
+			packageProductDependencies = (
+				43095FE32BFF84FB00C1FE3F /* YouTubePlayerKit */,
+			);
 			productName = DessertIsland;
 			productReference = 43EACE132BFBFF750032A5B3 /* DessertIsland.app */;
 			productType = "com.apple.product-type.application";
@@ -286,6 +291,9 @@
 				Base,
 			);
 			mainGroup = 43EACE0A2BFBFF750032A5B3;
+			packageReferences = (
+				43095FE22BFF84FB00C1FE3F /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+			);
 			productRefGroup = 43EACE142BFBFF750032A5B3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -666,6 +674,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43095FE22BFF84FB00C1FE3F /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43095FE32BFF84FB00C1FE3F /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43095FE22BFF84FB00C1FE3F /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43EACE0B2BFBFF750032A5B3 /* Project object */;
 }
