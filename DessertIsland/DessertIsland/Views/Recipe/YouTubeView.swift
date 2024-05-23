@@ -6,13 +6,30 @@
 //
 
 import SwiftUI
+import YouTubePlayerKit
 
 struct YouTubeView: View {
+    var youTubeURL: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let youTubePlayer = YouTubePlayer(stringLiteral: youTubeURL)
+        
+        return YouTubePlayerView(youTubePlayer) { state in
+                // Overlay ViewBuilder closure to place an overlay View
+                // for the current `YouTubePlayer.State`
+            switch state {
+                case .idle:
+                    ProgressView()
+                case .ready:
+                    EmptyView()
+                case .error(_):
+                    EmptyView()
+            }
+        }
+        .frame(height:300)
     }
 }
 
 #Preview {
-    YouTubeView()
+    YouTubeView(youTubeURL: "https://youtu.be/dQw4w9WgXcQ?si=SpCWa4FDgM3UKzUr")
 }

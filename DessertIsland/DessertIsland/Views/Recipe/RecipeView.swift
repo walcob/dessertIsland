@@ -10,12 +10,16 @@ import SwiftUI
 struct RecipeView: View {
     var recipeID: String
     @State private var recipe: Recipe? = nil
-    @State private var areIngredientsCollapsed = false
 
     var body: some View {
         if let recipe {
             ScrollView {
                 RecipeHeaderView(imageURL: recipe.thumbnailURL, name: recipe.name, area: recipe.area, source: recipe.source)
+                
+                if (!recipe.youtubeUrl.isEmpty)
+                {
+                    YouTubeView(youTubeURL:recipe.youtubeUrl)
+                }
 
                 Divider()
 
