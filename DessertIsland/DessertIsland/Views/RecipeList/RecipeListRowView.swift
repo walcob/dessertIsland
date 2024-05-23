@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct RecipeListRow: View {
+struct RecipeListRowView: View {
     var recipeListEntry: RecipeListEntry
     
     var body: some View {
         HStack{
-            RecipeImage(imageUrl:recipeListEntry.strMealThumb)
+            RecipeImageView(imageURL:recipeListEntry.strMealThumb)
             Text(recipeListEntry.strMeal)
             Spacer()
         }
@@ -22,5 +22,5 @@ struct RecipeListRow: View {
 #Preview {
     let recipeList = TestData().recipeList
     let sugarPieEntry = recipeList.meals.first(where: {$0.idMeal == sugarPieID})
-    return RecipeListRow(recipeListEntry: sugarPieEntry!)
+    return RecipeListRowView(recipeListEntry: sugarPieEntry!)
 }

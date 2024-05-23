@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct RecipeImage: View {
-    var imageUrl:String
+struct RecipeImageView: View {
+    var imageURL:String
     var width:CGFloat = 50
     var height:CGFloat = 50
     var body: some View {
-        AsyncImage(url: URL(string: imageUrl)){ image in
+        AsyncImage(url: URL(string: imageURL)){ image in
             image.resizable()
         } placeholder: {
             ProgressView()
@@ -27,5 +27,5 @@ struct RecipeImage: View {
 }
 
 #Preview {
-    RecipeImage(imageUrl: "https://www.themealdb.com/images/media/meals/yrstur1511816601.jpg")
+    RecipeImageView(imageURL: "https://www.themealdb.com/images/media/meals/yrstur1511816601.jpg")
 }

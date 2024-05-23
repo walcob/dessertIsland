@@ -23,7 +23,7 @@ struct RecipeListView: View {
                 NavigationLink{
                     RecipeView(recipeID: recipeEntry.idMeal)
                 } label: {
-                    RecipeListRow(recipeListEntry: recipeEntry)
+                    RecipeListRowView(recipeListEntry: recipeEntry)
                 }
             }
             .navigationTitle("Dessert Recipes")
