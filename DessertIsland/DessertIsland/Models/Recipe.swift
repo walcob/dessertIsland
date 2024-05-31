@@ -15,13 +15,13 @@ struct Recipes: Codable {
 struct Recipe: BaseRecipe {
     var id: String
     var name: String
-    var category: String
-    var area: String
-    var instructions: String
+    var category: String = ""
+    var area: String = ""
+    var instructions: String = ""
     var thumbnailURL: String
-    var youtubeURL: String
-    var ingredients: [Ingredient]
-    var source: String
+    var youtubeURL: String = ""
+    var ingredients: [Ingredient] = []
+    var source: String = ""
     
     private struct DynamicCodingKeys: CodingKey{
         var stringValue: String
@@ -37,13 +37,30 @@ struct Recipe: BaseRecipe {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy:DynamicCodingKeys.self)
-        ingredients = []
         
+        
+        // Required pieces
+        id = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:"idMeal")!)
+        name = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:"strMeal")!)
+        thumbnailURL = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:"strMealThumb")!)
+        
+        ingredients = try decodeIngredients(container: container)
+        
+        category = decodeString(container:container,stringValue:"strCategory")
+        area = decodeString(container:container,stringValue:"strArea")
+        instructions = decodeString(container:container,stringValue:"strInstructions")
+        youtubeURL = decodeString(container:container,stringValue:"strYoutube")
+        source = decodeString(container:container,stringValue:"strSource")
+    }
+    
+    private func decodeIngredients(container:KeyedDecodingContainer<DynamicCodingKeys>) throws -> [Ingredient]
+    {
+        var ingredients:[Ingredient] = []
         for key in container.allKeys{
             if key.stringValue.starts(with:"strIngredient")
             {
-                let ingredient = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:key.stringValue)!)
-                if !ingredient.isEmpty
+                let ingredient = try container.decode(String?.self, forKey: DynamicCodingKeys(stringValue:key.stringValue)!)
+                if let ingredient, !ingredient.isEmpty
                 {
                     let quantityKey = "strMeasure\(key.stringValue.split(separator:"strIngredient")[0])"
                     let quantity = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:quantityKey)!)
@@ -51,14 +68,19 @@ struct Recipe: BaseRecipe {
                 }
             }
         }
-        id = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:"idMeal")!)
-        name = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:"strMeal")!)
-        category = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:"strCategory")!)
-        area = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:"strArea")!)
-        instructions = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:"strInstructions")!)
-        thumbnailURL = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:"strMealThumb")!)
-        youtubeURL = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:"strYoutube")!)
-        source = try container.decode(String.self, forKey: DynamicCodingKeys(stringValue:"strSource")!)
+        return ingredients
+    }
+    
+    private func decodeString(container:KeyedDecodingContainer<DynamicCodingKeys>, stringValue:String) -> String
+    {
+        do
+        {
+            let decodedString = try container.decode(String?.self,forKey: DynamicCodingKeys(stringValue:stringValue)!)
+            return decodedString ?? ""
+        }
+        catch{
+            return ""
+        }
     }
 }
 
