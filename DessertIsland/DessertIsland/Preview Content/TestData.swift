@@ -10,8 +10,7 @@ import Foundation
 
 @Observable
 class TestData {
-    var recipeListData: RecipeListData = RecipeListData(recipeList:load("recipes.json"))
-    
+    var recipeListData: RecipeListData = .init(recipeList: load("recipes.json"))
 
     func sugarPie() -> Recipe {
         let recipes: Recipes = load("sugarPie.json")

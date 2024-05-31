@@ -12,9 +12,8 @@ struct RecipeView: View {
     @Environment(RecipeListData.self) var recipeList
 
     var body: some View {
-        if recipeList.recipes[recipeID]!.isFullyLoaded
-        {
-            let recipe:Recipe = recipeList.recipes[recipeID]!
+        if recipeList.recipes[recipeID]!.isFullyLoaded {
+            let recipe: Recipe = recipeList.recipes[recipeID]!
             ScrollView {
                 RecipeHeaderView(imageURL: recipe.thumbnailURL, name: recipe.name, area: recipe.area, source: recipe.source)
 
@@ -41,7 +40,7 @@ struct RecipeView: View {
 }
 
 #Preview {
-    let recipeListData:RecipeListData = TestData().recipeListData
+    let recipeListData: RecipeListData = TestData().recipeListData
     return RecipeView(recipeID: sugarPieID)
         .environment(recipeListData)
 }

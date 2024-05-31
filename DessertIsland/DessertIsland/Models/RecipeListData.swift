@@ -9,15 +9,13 @@ import Foundation
 
 @Observable
 class RecipeListData {
-    var recipes = Dictionary<String,Recipe>()
-    
-    init(recipeList:RecipeList)
-    {
-        recipeList.meals.forEach{ recipe in
+    var recipes = [String: Recipe]()
+
+    init(recipeList: RecipeList) {
+        for recipe in recipeList.meals {
             recipes[recipe.id] = recipe
         }
     }
-    init()
-    {
-    }
+
+    init() {}
 }

@@ -10,9 +10,9 @@ import SwiftUI
 struct RecipeListView: View {
     @Environment(RecipeListData.self) var recipeList
     @State private var search = ""
-    
-    var filteredRecipes: [Recipe]{
-        recipeList.recipes.filter{ (key,recipe) in
+
+    var filteredRecipes: [Recipe] {
+        recipeList.recipes.filter { _, recipe in
             search.isEmpty || recipe.name.lowercased().contains(search.lowercased())
         }.values.sorted()
     }
