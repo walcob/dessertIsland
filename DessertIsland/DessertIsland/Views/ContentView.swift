@@ -12,9 +12,6 @@ struct ContentView: View {
 
     var body: some View {
         RecipeListView()
-            .task {
-                recipeList.recipes = await GetRecipeList()
-            }
     }
 }
 
