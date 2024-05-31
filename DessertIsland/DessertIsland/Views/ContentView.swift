@@ -12,15 +12,11 @@ struct ContentView: View {
 
     var body: some View {
         RecipeListView()
-            .task {
-                recipeList.recipes = await GetRecipeList()
-            }
     }
 }
 
 #Preview {
-    let recipeListData = RecipeListData()
-    recipeListData.recipes = TestData().recipeList.meals
+    let recipeListData = TestData().recipeListData
     return ContentView()
         .environment(recipeListData)
 }

@@ -9,15 +9,16 @@ import SwiftUI
 
 struct RecipeView: View {
     var recipeID: String
-    @State private var recipe: Recipe? = nil
+    @Environment(RecipeListData.self) var recipeList
 
     var body: some View {
-        if let recipe {
+        if recipeList.recipes[recipeID]!.isFullyLoaded {
+            let recipe: Recipe = recipeList.recipes[recipeID]!
             ScrollView {
                 RecipeHeaderView(imageURL: recipe.thumbnailURL, name: recipe.name, area: recipe.area, source: recipe.source)
 
-                if !recipe.youtubeUrl.isEmpty {
-                    YouTubeView(youTubeURL: recipe.youtubeUrl)
+                if !recipe.youtubeURL.isEmpty {
+                    YouTubeView(youTubeURL: recipe.youtubeURL)
                 }
 
                 Divider()
@@ -32,12 +33,14 @@ struct RecipeView: View {
             ProgressView()
                 .controlSize(.large)
                 .task {
-                    recipe = await GetRecipe(recipeID: recipeID)
+                    recipeList.recipes[recipeID] = await GetRecipe(recipeID: recipeID)
                 }
         }
     }
 }
 
 #Preview {
-    RecipeView(recipeID: sugarPieID)
+    let recipeListData: RecipeListData = TestData().recipeListData
+    return RecipeView(recipeID: sugarPieID)
+        .environment(recipeListData)
 }

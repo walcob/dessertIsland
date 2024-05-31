@@ -10,11 +10,11 @@ import Foundation
 
 @Observable
 class TestData {
-    var recipeList: RecipeList = load("recipes.json")
+    var recipeListData: RecipeListData = .init(recipeList: load("recipes.json"))
 
     func sugarPie() -> Recipe {
-        let recipes: RawRecipes = load("sugarPie.json")
-        return ConvertToRecipe(rawRecipe: recipes.meals[0])
+        let recipes: Recipes = load("sugarPie.json")
+        return recipes.meals[0]
     }
 }
 
