@@ -12,7 +12,18 @@ struct Recipes: Codable {
     var meals: [Recipe]
 }
 
-struct Recipe: BaseRecipe {
+struct Recipe: Codable,Identifiable,Comparable {
+    static func < (lhs: Recipe, rhs: Recipe) -> Bool {
+        // This allows us to sort recipes alphabetically
+        return lhs.name < rhs.name
+    }
+    
+    static func == (lhs: Recipe, rhs: Recipe) -> Bool {
+        // each recipe is uniquely identified by its ID, so we
+        // should consider two recipes to be the same if they share IDs
+        return lhs.id == rhs.id
+    }
+    
     var id: String
     var name: String
     var category: String = ""
@@ -22,6 +33,7 @@ struct Recipe: BaseRecipe {
     var youtubeURL: String = ""
     var ingredients: [Ingredient] = []
     var source: String = ""
+    var isFullyLoaded:Bool = false
     
     private struct DynamicCodingKeys: CodingKey{
         var stringValue: String

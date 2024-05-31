@@ -13,7 +13,9 @@ func GetRecipe(recipeID: String) async -> Recipe {
     let apiCommandURL = "\(lookupBaseUrl)\(recipeID)"
     do {
         let recipes: Recipes = try await Fetch(urlString: apiCommandURL)
-        return recipes.meals[0]
+        var recipe = recipes.meals[0]
+        recipe.isFullyLoaded = true
+        return recipe
     } catch {
         fatalError("Failed to load recipe ID \(recipeID)\n\(error)")
     }

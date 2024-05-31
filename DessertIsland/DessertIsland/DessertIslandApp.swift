@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct DessertIslandApp: App {
-    @State private var recipeListData: RecipeListData = .init()
+    @State private var recipeListData = RecipeListData()
 
     var body: some Scene {
         WindowGroup {

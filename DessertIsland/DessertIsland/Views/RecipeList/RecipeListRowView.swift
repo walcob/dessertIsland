@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct RecipeListRowView: View {
-    var recipeListEntry: RecipeListEntry
+    var recipe: Recipe
 
     var body: some View {
         HStack {
-            RecipeImageView(imageURL: recipeListEntry.thumbnailURL)
-            Text(recipeListEntry.name)
+            RecipeImageView(imageURL: recipe.thumbnailURL)
+            Text(recipe.name)
             Spacer()
         }
     }
 }
 
 #Preview {
-    let recipeList = TestData().recipeList
-    let sugarPieEntry = recipeList.meals.first(where: { $0.id == sugarPieID })
-    return RecipeListRowView(recipeListEntry: sugarPieEntry!)
+    let recipeListData = TestData().recipeListData
+    let sugarPieEntry = recipeListData.recipes[sugarPieID]
+    return RecipeListRowView(recipe: sugarPieEntry!)
 }

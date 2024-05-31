@@ -16,8 +16,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    let recipeListData = RecipeListData()
-    recipeListData.recipes = TestData().recipeList.meals
+    let recipeListData = TestData().recipeListData
     return ContentView()
         .environment(recipeListData)
 }
