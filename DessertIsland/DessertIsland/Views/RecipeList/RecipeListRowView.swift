@@ -12,8 +12,8 @@ struct RecipeListRowView: View {
 
     var body: some View {
         HStack {
-            RecipeImageView(imageURL: recipeListEntry.strMealThumb)
-            Text(recipeListEntry.strMeal)
+            RecipeImageView(imageURL: recipeListEntry.thumbnailURL)
+            Text(recipeListEntry.name)
             Spacer()
         }
     }
@@ -21,6 +21,6 @@ struct RecipeListRowView: View {
 
 #Preview {
     let recipeList = TestData().recipeList
-    let sugarPieEntry = recipeList.meals.first(where: { $0.idMeal == sugarPieID })
+    let sugarPieEntry = recipeList.meals.first(where: { $0.id == sugarPieID })
     return RecipeListRowView(recipeListEntry: sugarPieEntry!)
 }

@@ -11,8 +11,14 @@ struct RecipeList: Codable {
     var meals: [RecipeListEntry]
 }
 
-struct RecipeListEntry: Codable {
-    var idMeal: String
-    var strMeal: String
-    var strMealThumb: String
+struct RecipeListEntry: Codable, Identifiable {
+    var id: String
+    var name: String
+    var thumbnailURL: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "idMeal"
+        case name = "strMeal"
+        case thumbnailURL = "strMealThumb"
+    }
 }

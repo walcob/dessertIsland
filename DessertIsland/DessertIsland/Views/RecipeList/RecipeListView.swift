@@ -13,15 +13,15 @@ struct RecipeListView: View {
 
     var filteredRecipes: [RecipeListEntry] {
         recipeList.recipes.filter { recipe in
-            search.isEmpty || recipe.strMeal.lowercased().contains(search.lowercased())
+            search.isEmpty || recipe.name.lowercased().contains(search.lowercased())
         }
     }
 
     var body: some View {
         NavigationSplitView {
-            List(filteredRecipes, id: \.idMeal) { recipeEntry in
+            List(filteredRecipes) { recipeEntry in
                 NavigationLink {
-                    RecipeView(recipeID: recipeEntry.idMeal)
+                    RecipeView(recipeID: recipeEntry.id)
                 } label: {
                     RecipeListRowView(recipeListEntry: recipeEntry)
                 }

@@ -13,7 +13,7 @@ func GetRecipeList() async -> [RecipeListEntry] {
     do {
         let recipeList: RecipeList = try await Fetch(urlString: dessertsUrl)
         return recipeList.meals.sorted {
-            $0.strMeal < $1.strMeal
+            $0.name < $1.name
         }
     } catch {
         fatalError("Failed to load available recipes:\n\(error)")
