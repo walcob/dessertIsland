@@ -11,7 +11,7 @@ struct RecipeList: Codable {
     var meals: [RecipeListEntry]
 }
 
-struct RecipeListEntry: Codable, Identifiable {
+struct RecipeListEntry: BaseRecipe {
     var id: String
     var name: String
     var thumbnailURL: String

@@ -25,6 +25,7 @@
 		437944632C016D1300537F36 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 437944602C016D1300537F36 /* recipes.json */; };
 		437944642C016D1300537F36 /* sugarPie.json in Resources */ = {isa = PBXBuildFile; fileRef = 437944612C016D1300537F36 /* sugarPie.json */; };
 		437944652C016D1300537F36 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437944622C016D1300537F36 /* TestData.swift */; };
+		43B4A50A2C0957A00007CF11 /* BaseRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B4A5092C0957A00007CF11 /* BaseRecipe.swift */; };
 		43EACE172BFBFF750032A5B3 /* DessertIslandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EACE162BFBFF750032A5B3 /* DessertIslandApp.swift */; };
 		43EACE192BFBFF750032A5B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EACE182BFBFF750032A5B3 /* ContentView.swift */; };
 		43EACE1B2BFBFF770032A5B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EACE1A2BFBFF770032A5B3 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		437944602C016D1300537F36 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		437944612C016D1300537F36 /* sugarPie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sugarPie.json; sourceTree = "<group>"; };
 		437944622C016D1300537F36 /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		43B4A5092C0957A00007CF11 /* BaseRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRecipe.swift; sourceTree = "<group>"; };
 		43EACE132BFBFF750032A5B3 /* DessertIsland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DessertIsland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EACE162BFBFF750032A5B3 /* DessertIslandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertIslandApp.swift; sourceTree = "<group>"; };
 		43EACE182BFBFF750032A5B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				431E78912BFC009F00605B20 /* Recipe.swift */,
 				431E78982BFC03A200605B20 /* RecipeListEntry.swift */,
 				430395E82BFE645400FC0E62 /* RecipeListData.swift */,
+				43B4A5092C0957A00007CF11 /* BaseRecipe.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				430395E92BFE645400FC0E62 /* RecipeListData.swift in Sources */,
 				431E789D2BFC0A9E00605B20 /* RecipeListView.swift in Sources */,
 				431E78B02BFD1B4200605B20 /* Fetch.swift in Sources */,
+				43B4A50A2C0957A00007CF11 /* BaseRecipe.swift in Sources */,
 				437944652C016D1300537F36 /* TestData.swift in Sources */,
 				431E789F2BFC0AB800605B20 /* RecipeListRowView.swift in Sources */,
 				43EACE192BFBFF750032A5B3 /* ContentView.swift in Sources */,
