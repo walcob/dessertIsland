@@ -11,19 +11,19 @@ struct RecipeListView: View {
     @Environment(RecipeListData.self) var recipeList
     @State private var search = ""
 
-    var filteredRecipes: [RecipeListEntry] {
-        recipeList.recipes.filter { recipe in
-            search.isEmpty || recipe.strMeal.lowercased().contains(search.lowercased())
-        }
+    var filteredRecipes: [Recipe] {
+        recipeList.recipes.filter { _, recipe in
+            search.isEmpty || recipe.name.lowercased().contains(search.lowercased())
+        }.values.sorted()
     }
 
     var body: some View {
         NavigationSplitView {
-            List(filteredRecipes, id: \.idMeal) { recipeEntry in
+            List(filteredRecipes) { recipe in
                 NavigationLink {
-                    RecipeView(recipeID: recipeEntry.idMeal)
+                    RecipeView(recipeID: recipe.id)
                 } label: {
-                    RecipeListRowView(recipeListEntry: recipeEntry)
+                    RecipeListRowView(recipe: recipe)
                 }
             }
             .navigationTitle("Dessert Recipes")
@@ -35,8 +35,7 @@ struct RecipeListView: View {
 }
 
 #Preview {
-    let recipeListData = RecipeListData()
-    recipeListData.recipes = TestData().recipeList.meals
+    let recipeListData = TestData().recipeListData
     return RecipeListView()
         .environment(recipeListData)
 }
